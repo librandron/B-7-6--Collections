@@ -23,13 +23,17 @@ namespace Base.Lesson_5
             Console.WriteLine("Enter room number");
             var roomNumber = Convert.ToInt32(Console.ReadLine());
 
-            foreach (Neighbor nbr in floorNeighbors)
+            foreach ( Neighbor nbr in floorNeighbors)
             {
-                Console.WriteLine(nbr.fullName);
+                if (roomNumber == nbr.flatNumber)
+                {
+                    Console.WriteLine($"Neighbor's Name {nbr.fullName} and phone {nbr.phoneNumber}");
+                }
+
+
+                
             }
 
-            floorNeighbors.Find();
-            
             Console.ReadLine();
         }
 

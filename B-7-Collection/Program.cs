@@ -57,13 +57,29 @@ namespace Base.Lesson_5
             Console.WriteLine("Enter room number");
             var roomNumber = Convert.ToInt32(Console.ReadLine());
 
-            foreach (int key in floorNeighbors.Keys)
+            if (floorNeighbors.ContainsKey(roomNumber))
             {
-                if(roomNumber == key)
-                {
-                    Console.WriteLine($"name {floorNeighbors[key].fullName} phone {floorNeighbors[key].phoneNumber}");
-                }
+                Console.WriteLine($"name {floorNeighbors[roomNumber].fullName} phone {floorNeighbors[roomNumber].phoneNumber}");
             }
+            else
+            {
+                Console.WriteLine("Wrong room number");
+            }
+
+
+
+
+
+
+
+
+            //foreach (int key in floorNeighbors.Keys)
+            //{
+            //    if(roomNumber == key)
+            //    {
+            //        Console.WriteLine($"name {floorNeighbors[key].fullName} phone {floorNeighbors[key].phoneNumber}");
+            //    }
+            //}
 
 
             //Console.WriteLine(floorNeighbors[4].fullName);

@@ -14,23 +14,94 @@ namespace Base.Lesson_5
             //ArrayListExample();
             //ArrayListExample2();
 
-            List<Neighbor> floorNeighbors = new List<Neighbor>();
 
-            floorNeighbors.Add( new Neighbor() {fullName = "Bill", flatNumber = 3, phoneNumber = 299379992 });
-            floorNeighbors.Add(new Neighbor() { fullName = "Monika", flatNumber = 5, phoneNumber = 292220327 });
-            floorNeighbors.Add(new Neighbor() { fullName = "Joy", flatNumber = 7, phoneNumber = 291111111 });
+            //LIST
+
+            //List<Neighbor> floorNeighbors = new List<Neighbor>();
+
+            //floorNeighbors.Add( new Neighbor() {fullName = "Bill", flatNumber = 3, phoneNumber = 299379992 });
+            //floorNeighbors.Add(new Neighbor() { fullName = "Monika", flatNumber = 5, phoneNumber = 292220327 });
+            //floorNeighbors.Add(new Neighbor() { fullName = "Joy", flatNumber = 7, phoneNumber = 291111111 });
+
+            //Console.WriteLine("Enter room number");
+            //var roomNumber = Convert.ToInt32(Console.ReadLine());
+
+            //foreach ( Neighbor nbr in floorNeighbors)
+            //{
+            //    if (roomNumber == nbr.flatNumber)
+            //    {
+            //        Console.WriteLine($"Neighbor's Name {nbr.fullName} and phone {nbr.phoneNumber}");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("You never find your neighbor");
+            //    }
+
+                
+            //}
+
+            //Console.ReadLine();
+
+
+
+            //DICTIONARY
+
+            Dictionary<int, Neighbor> floorNeighbors = new Dictionary<int, Neighbor>();
+
+            floorNeighbors.Add(4, new Neighbor() { fullName = "Bill",  phoneNumber = 299379992 });
+            floorNeighbors.Add(1, new Neighbor() { fullName = "Monika",  phoneNumber = 292220327 });
+            floorNeighbors.Add(18, new Neighbor() { fullName = "Joy", phoneNumber = 291111111 });
+
+
 
             Console.WriteLine("Enter room number");
             var roomNumber = Convert.ToInt32(Console.ReadLine());
 
-            foreach (Neighbor nbr in floorNeighbors)
+            if (floorNeighbors.ContainsKey(roomNumber))
             {
-                Console.WriteLine(nbr.fullName);
+                Console.WriteLine($"name {floorNeighbors[roomNumber].fullName} phone {floorNeighbors[roomNumber].phoneNumber}");
+            }
+            else
+            {
+                Console.WriteLine("Wrong room number");
             }
 
-            floorNeighbors.Find();
-            
+
+
+
+
+
+
+
+            //foreach (int key in floorNeighbors.Keys)
+            //{
+            //    if(roomNumber == key)
+            //    {
+            //        Console.WriteLine($"name {floorNeighbors[key].fullName} phone {floorNeighbors[key].phoneNumber}");
+            //    }
+            //}
+
+
+            //Console.WriteLine(floorNeighbors[4].fullName);
+
+            //foreach (KeyValuePair<int, Neighbor> keyValue in floorNeighbors)
+            //{
+            //    if (roomNumber == keyValue.Key)
+            //    {
+            //        Console.WriteLine($"Neighbor's Name {keyValue.Value.fullName} and phone {keyValue.Value.phoneNumber}");
+            //        break;
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("You never find your neighbor");
+            //        break;
+            //    }
+
+
+            //}
+
             Console.ReadLine();
+
         }
 
         static void ArrayListExample2()
